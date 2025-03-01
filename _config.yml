@@ -1,14 +1,10 @@
-# Hexo Configuration
-## Docs: https://hexo.io/docs/configuration.html
-## Source: https://github.com/hexojs/hexo/
-
 # Site
-title: Hexo
+title: 个人博客
 subtitle: ''
 description: ''
 keywords:
-author: John Doe
-language: en
+author: 陈嘉鸿
+language: zh-Hans
 timezone: ''
 
 # URL
@@ -96,9 +92,11 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: async
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repo: https://github.com/CPeace-creator/Blogcjh.github.io.git
+  branch: main
