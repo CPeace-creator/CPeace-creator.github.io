@@ -1,0 +1,16 @@
+theme:
+  default: style-dark
+user:
+  name: 湘江中路 # Nickname | 昵称
+  first_name: 嘉鸿 # 名
+  last_name: 陈 # 姓
+  email: chenjiahong@datasega.com
+  avatar: https://raw.githubusercontent.com/CPeace-creator/picGo/main/logo.jpg?token=AWNON2Q5DKWTIJUXJV55NHTHYLXVG
+  describe: 网站简介。 # Describe | 网站简介
+  rule_text: 暂不接受个人博客以外的友链申请，确保您的网站内容积极向上，文章至少30篇，原创70%以上，部署HTTPS。 # 友链规则
+favicon:
+  logo: https://raw.githubusercontent.com/CPeace-creator/picGo/main/logo.jpg?token=AWNON2Q5DKWTIJUXJV55NHTHYLXVG
+  show_text: (/≧▽≦/)咦！又好了！
+  hide_text: (●—●)喔哟，崩溃啦！
+assets:
+  third_party_provider: https://npm.elemecdn.com
