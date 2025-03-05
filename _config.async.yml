@@ -14,3 +14,37 @@ favicon:
   hide_text: (●—●)喔哟，崩溃啦！
 assets:
   third_party_provider: https://npm.elemecdn.com
+footer:
+  powered:
+    enable: true
+  beian:
+    enable: true
+    icp:
+  copyright_year:
+  live_time:
+    enable: true
+    prefix: footer.tips
+    start_time: 03/01/2025 17:00:00
+top_bars:
+  - title: About Me
+    url: /2025/03/05/home/
+  - title: Project
+    url: /
+    children:
+      - title: UniPush推送
+        url: /uniPush/
+    noswup: true
+sidebar:
+  typed_text_prefix: I`m
+  typed_text: ["Web Developer"]
+  info: # 个人信息
+    - key: 目标
+      val: 独立开发
+    - key: 2025目标
+      val: 开发课海导航项目
+banner:
+	danmu: 
+		enable: true
+		avatar: true
+		delayRange: 5000
+		speed: 80

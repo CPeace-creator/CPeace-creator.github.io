@@ -1,16 +1,11 @@
 ---
-title: About Me
-keywords: 个人介绍
+title: UniPush推送项目
+keywords: 项目
 cover: /img/hello.png
-sticky: 0
-banner:
-type: img
-bgurl: /img/hello.png
-banner_text: Hi my new friend!
-author: 陈嘉鸿
-categories:
-  - 自我介绍
+sticky: 10
+toc: false
 ---
+
 ## About Me
 Web Developer & Designer  
 福建省厦门市  
@@ -30,3 +25,4 @@ Web Developer & Designer
 ## 最近的工作
 
 - **开发课海导航项目**  
+  
