@@ -32,7 +32,7 @@ top_bars:
     url: /
     children:
       - title: UniPush推送
-        url: /uniPush/
+        url: /2025/03/05/uniPush/
     noswup: true
 sidebar:
   typed_text_prefix: I`m
