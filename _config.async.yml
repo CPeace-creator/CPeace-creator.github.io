@@ -33,6 +33,8 @@ top_bars:
     children:
       - title: UniPush推送
         url: /2025/03/05/uniPush/
+      - title: 课海导航
+        url: /2025/03/05/courseSea/
     noswup: true
 sidebar:
   typed_text_prefix: I`m
@@ -43,6 +45,9 @@ sidebar:
     - key: 2025目标
       val: 开发课海导航项目
 banner:
+  index: ## 首页横幅
+    banner_title: 代码深时见梦,<br>夜半不闻声。
+    banner_text: Hi my new friend!
 	danmu: 
 		enable: true
 		avatar: true

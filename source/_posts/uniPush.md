@@ -2,8 +2,10 @@
 title: UniPush推送项目
 keywords: 项目
 cover: /img/hello.png
-sticky: 10
+sticky: 0
 toc: false
+categories:
+  - 项目
 ---
 
 ## About Me

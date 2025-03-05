@@ -2,7 +2,7 @@
 title: About Me
 keywords: 个人介绍
 cover: /img/hello.png
-sticky: 0
+sticky: 1
 banner:
 type: img
 bgurl: /img/hello.png
