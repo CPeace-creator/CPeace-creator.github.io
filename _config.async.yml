@@ -45,6 +45,12 @@ sidebar:
     - key: 2025目标
       val: 开发课海导航项目
 banner:
+  default: # 默认横幅配置
+    type: img # 横幅类型 <[img,slideshow,video]>
+    bgurl: /img/fj1.jpg # 背景图地址
+    banner_text: Hi my new friend! # 横幅描述
+    position: top # 同 CSS object-position
+    fit: cover # 同 CSS object-fit
   index: ## 首页横幅
     banner_title: 代码深时见梦,<br>夜半不闻声。
     banner_text: Hi my new friend!
