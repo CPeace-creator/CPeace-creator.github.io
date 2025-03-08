@@ -1,7 +1,7 @@
 ---
 title: 课海导航
 keywords: 项目
-cover: /img/hello.png
+cover: https://raw.githubusercontent.com/CPeace-creator/picGo/main/hello.png
 sticky: 0
 toc: false
 categories:

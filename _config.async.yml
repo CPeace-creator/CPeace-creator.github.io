@@ -5,18 +5,18 @@ user:
   first_name: 嘉鸿 # 名
   last_name: 陈 # 姓
   email: chenjiahong@datasega.com
-  avatar: https://raw.githubusercontent.com/CPeace-creator/picGo/main/logo.jpg?token=AWNON2Q5DKWTIJUXJV55NHTHYLXVG
+  avatar: https://raw.githubusercontent.com/CPeace-creator/picGo/main/logo.jpg
   describe: 网站简介。 # Describe | 网站简介
   rule_text: 暂不接受个人博客以外的友链申请，确保您的网站内容积极向上，文章至少30篇，原创70%以上，部署HTTPS。 # 友链规则
 favicon:
-  logo: https://raw.githubusercontent.com/CPeace-creator/picGo/main/logo.jpg?token=AWNON2Q5DKWTIJUXJV55NHTHYLXVG
+  logo: https://raw.githubusercontent.com/CPeace-creator/picGo/main/logo.jpg
   show_text: (/≧▽≦/)咦！又好了！
   hide_text: (●—●)喔哟，崩溃啦！
 assets:
   third_party_provider: https://npm.elemecdn.com
 footer:
   powered:
-    enable: true
+    enable: false
   beian:
     enable: true
     icp:
@@ -25,6 +25,7 @@ footer:
     enable: true
     prefix: footer.tips
     start_time: 03/01/2025 17:00:00
+  custom_text: 制作不易,请留个言再离开吧～
 top_bars:
   - title: About Me
     url: /2025/03/05/home/
@@ -35,6 +36,8 @@ top_bars:
         url: /2025/03/05/uniPush/
       - title: 课海导航
         url: /2025/03/05/courseSea/
+      - title: 卡车物流系统
+        url: /2025/03/16/EPR/
     noswup: true
 sidebar:
   typed_text_prefix: I`m
@@ -47,14 +50,14 @@ sidebar:
 banner:
   default: # 默认横幅配置
     type: img # 横幅类型 <[img,slideshow,video]>
-    bgurl: /img/fj1.jpg # 背景图地址
+    bgurl: https://raw.githubusercontent.com/CPeace-creator/picGo/main/fj1.jpg # 背景图地址
     banner_text: Hi my new friend! # 横幅描述
     position: top # 同 CSS object-position
     fit: cover # 同 CSS object-fit
   index: ## 首页横幅
     banner_title: 代码深时见梦,<br>夜半不闻声。
     banner_text: Hi my new friend!
-	danmu: 
+	danmu:
 		enable: true
 		avatar: true
 		delayRange: 5000
