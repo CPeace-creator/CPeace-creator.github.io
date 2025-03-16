@@ -9,6 +9,7 @@ categories:
 reward: true
 ---
 
+<<<<<<< HEAD
 # UniPush 推送项目
 
 本项目基于 **uni-app** 开发，实现了 **实时推送、抽奖大转盘、订单同步等功能**，并结合 **uniCloud 云开发** 进行服务端处理，支持 **H5 端和微信小程序** 的无缝部署。
@@ -86,3 +87,47 @@ reward: true
 本项目不仅实现了 **抽奖 + 实时推送 + 云开发** 的核心功能，还结合 **优化策略（防抖、分页加载、定时任务）**，确保系统的高效运行。同时，依赖于 **uni-app**，可无缝部署至 **H5 和微信小程序**，实现真正的 **多端互通**。
 
 📌 **欢迎体验 & 交流改进意见！🎉**
+=======
+## 项目的功能点
+1.熟练应用HTML+CSS掌握抽奖大转盘页面布局
+2.uniapp组件及扩展组件的应用
+3.z-paging扩展插件做触底加载和下拉刷新
+4.CSS中有趣的animation动画实现
+5.官方插件市场及npm下载项目需要的依赖
+6.uniCloud云函数JQL语法及schema表及触发器
+7.uni-id用户体系定制微信一键登录和账号登录
+8.开启uni-push实时推送功能
+9.通过push实现多人同时同步点餐菜单案例
+10.lodash.debounce防抖优化网络开销
+11.调用微信API生成及解析小程序码
+12.扫码核销实现逻辑
+13.云对象timing定时触发器的应用
+14.打包上线微信小程序和H5云端web托管
+
+## 项目部分展示图
+<img src="https://raw.githubusercontent.com/CPeace-creator/picGo/main/raffle-pic.jpg">
+
+## 项目抽奖活动页
+<img src="https://raw.githubusercontent.com/CPeace-creator/picGo/main/20250308180107.png">
+
+## 创建抽奖页
+<img src="https://raw.githubusercontent.com/CPeace-creator/picGo/main/20250308180505.png"/>
+
+## 获取记录页
+<img src="https://raw.githubusercontent.com/CPeace-creator/picGo/main/20250308180555.png"/>
+
+## 开启抽奖页
+<img src="https://raw.githubusercontent.com/CPeace-creator/picGo/main/20250308180620.png"/>
+
+## 中奖核销页
+<img src="https://raw.githubusercontent.com/CPeace-creator/picGo/main/20250308180646.png"/>
+
+## 正在抽奖页
+<img src="https://raw.githubusercontent.com/CPeace-creator/picGo/main/20250308180709.png"/>
+
+## 中奖状态(未中奖)
+<img src="https://raw.githubusercontent.com/CPeace-creator/picGo/main/20250308180739.png"/>
+
+## 中奖状态(已中奖)
+<img src="https://raw.githubusercontent.com/CPeace-creator/picGo/main/20250308180739.png"/>
+>>>>>>> 88e950995bb1eb8f6bf6702b2f8ae2029dd6e562
