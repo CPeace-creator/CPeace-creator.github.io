@@ -1,5 +1,5 @@
 ---
-title: About Me
+title: 关于我
 keywords: 个人介绍
 cover: https://raw.githubusercontent.com/CPeace-creator/picGo/main/hello.png
 sticky: 1

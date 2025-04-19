@@ -27,9 +27,11 @@ footer:
     start_time: 03/01/2025 17:00:00
   custom_text: 制作不易,请留个言再离开吧～
 top_bars:
-  - title: About Me
+  - title: 技术栈
+    url: /technology/index/
+  - title: 关于我
     url: /2025/03/05/home/
-  - title: Project
+  - title: 我的项目
     url: /
     children:
       - title: UniPush推送
@@ -37,7 +39,7 @@ top_bars:
       - title: 课海导航
         url: /2025/03/23/courseSea/
       - title: 卡车物流系统
-        url: /2025/03/16/EPR/
+        url: /2025/03/23/EPR/
     noswup: true
 sidebar:
   typed_text_prefix: I`m
