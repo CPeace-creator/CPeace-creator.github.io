@@ -98,5 +98,5 @@ theme: async
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: git@github.com:CPeace-creator/CPeace-creator.github.io.git
+  repo: https://github.com/CPeace-creator/CPeace-creator.github.io.git
   branch: main
