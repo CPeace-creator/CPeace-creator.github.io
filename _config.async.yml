@@ -59,8 +59,8 @@ banner:
   index: ## 首页横幅
     banner_title: 代码深时见梦,<br>夜半不闻声。
     banner_text: Hi my new friend!
-	danmu:
-		enable: true
-		avatar: true
-		delayRange: 5000
-		speed: 80
+  danmu:
+    enable: true
+    avatar: true
+    delayRange: 5000
+    speed: 80

@@ -1,5 +1,6 @@
 ---
 title: 我的技术栈
+date: 2025-04-19 21:36:00
 keywords: 技术栈, 开发技能, 编程语言
 cover: https://www.logosc.cn/uploads/resources/2018/11/29/1543459457_thumb.jpg
 sticky: 10

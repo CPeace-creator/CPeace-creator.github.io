@@ -1,5 +1,6 @@
 ---
 title: 课海导航
+date: 2025-03-23 21:28:00
 keywords: 项目
 cover: https://raw.githubusercontent.com/CPeace-creator/picGo/main/hello.png
 sticky: 0

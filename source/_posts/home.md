@@ -1,5 +1,6 @@
 ---
 title: 关于我
+date: 2025-03-05 21:23:00
 keywords: 个人介绍
 cover: https://raw.githubusercontent.com/CPeace-creator/picGo/main/hello.png
 sticky: 1
