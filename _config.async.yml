@@ -47,8 +47,8 @@ sidebar:
   info: # 个人信息
     - key: 目标
       val: 独立开发
-    - key: 2025目标
-      val: 开发课海导航项目
+    - key: 2026年目标
+      val: 研究副业
 banner:
   default: # 默认横幅配置
     type: img # 横幅类型 <[img,slideshow,video]>
