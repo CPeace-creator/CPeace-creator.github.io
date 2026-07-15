@@ -2,7 +2,7 @@
 title: AI投标
 date: 2026-04-02 12:10:00
 keywords: AI审查, 标书解析, 技术方案生成, RuoYi, Vue3, SpringBoot
-cover: https://raw.githubusercontent.com/CPeace-creator/picGo/main/20250316153125.png
+cover: /img/ai-bidding-platform/login.png
 sticky: 0
 toc: true
 categories:
