@@ -40,6 +40,8 @@ top_bars:
         url: /2025/03/23/courseSea/
       - title: 卡车物流系统
         url: /2025/03/23/EPR/
+      - title: AI投标
+        url: /2026/04/02/ai-bidding-platform/
     noswup: true
 sidebar:
   typed_text_prefix: I`m

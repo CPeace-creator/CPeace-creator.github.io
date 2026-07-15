@@ -1,5 +1,5 @@
 ---
-title: AI标书审查与智能方案编制平台项目复盘
+title: AI投标
 date: 2026-04-02 12:10:00
 keywords: AI审查, 标书解析, 技术方案生成, RuoYi, Vue3, SpringBoot
 cover: https://raw.githubusercontent.com/CPeace-creator/picGo/main/20250316153125.png
@@ -15,7 +15,7 @@ categories:
 
 <img src="/img/ai-bidding-platform/doc-review.png" width="75%" alt="AI标书审查模块配图">
 
-从前后端代码的拆分来看，整套系统主要服务于以下几个真实业务场景：
+整套系统主要服务于以下几个真实业务场景：
 
 - 招标文件、投标文件上传后，需要快速完成文本提取、预览和结构化处理。
 - 面对多家投标单位的技术标，需要做纪律性分析、响应性检查和内容样式校验。
@@ -29,9 +29,11 @@ categories:
 
 ### 1. AI 读标
 
-对应前端的 `AI助手标书解析` 页面和后端的文件解析、会话管理、聊天能力。
+对应 `AI助手标书` 页面,文件解析项目概要和分析解读、会话管理、聊天能力。
 
-<img src="/img/ai-bidding-platform/analysis.png" width="72%" alt="AI读标分析配图">
+<img src="/img/ai-bidding-platform/read1.png" width="72%" alt="AI读标分析配图">
+<img src="/img/ai-bidding-platform/read2.png" width="72%" alt="AI读标分析配图">
+<img src="/img/ai-bidding-platform/read3.png" width="72%" alt="AI读标分析配图">
 
 - 支持上传 Word、PDF 等文件进行解析。
 - 将 OSS 中的文件下载到本地后做文本提取，并入库保存解析结果。
@@ -51,13 +53,14 @@ categories:
 - 支持样式检查规则、通用规则和自定义规则的维护。
 - 支持检查后的一键改写、段落更新、结果回写和文档导出。
 
-从控制器和服务层来看，这部分不仅有常规 CRUD，还加入了异步任务、防重复发起、并发测试入口、OSS 直传、RabbitMQ、文档转换等能力，说明系统已经开始从“功能可用”向“业务可落地”推进。
+这部分不仅有常规 CRUD，还加入了异步任务、防重复发起、并发测试入口、OSS 直传、RabbitMQ、文档转换等能力，说明系统已经开始从“功能可用”向“业务可落地”推进。
 
 ### 3. 模板资源库
 
 这一块由资源模板库、方案类型、目录模板、文档模板共同组成，是整个系统后续复用能力的基础。
 
 <img src="/img/ai-bidding-platform/template1.png" width="68%" alt="模板资源库配图">
+<img src="/img/ai-bidding-platform/template2.png" width="68%" alt="模板资源库配图">
 
 - 可维护方案类型。
 - 可维护模板分类。
