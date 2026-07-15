@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="项目背景这是一个围绕招投标业务搭建的 AI 辅助平台，核心目标不是做一个普通的管理后台，而是把 标书上传、读标解析、纪律性审查、响应性检查、模板沉淀、方案生成和在线编辑 串成一条完整链路，帮助业务人员减少重复性整理和人工比对工作。   整套系统主要服务于以下几个真实业务场景：  招标文件、投标文件上传后，需要快速完成文本提取、预览和结构化处理。 面对多家投标单位的技术标，需要做纪律性分析、响应性检">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI投标">
+<meta property="og:url" content="https://cpeace-creator.github.io/2026/04/02/ai-bidding-platform/index.html">
+<meta property="og:site_name" content="湘江中路的博客">
+<meta property="og:description" content="项目背景这是一个围绕招投标业务搭建的 AI 辅助平台，核心目标不是做一个普通的管理后台，而是把 标书上传、读标解析、纪律性审查、响应性检查、模板沉淀、方案生成和在线编辑 串成一条完整链路，帮助业务人员减少重复性整理和人工比对工作。   整套系统主要服务于以下几个真实业务场景：  招标文件、投标文件上传后，需要快速完成文本提取、预览和结构化处理。 面对多家投标单位的技术标，需要做纪律性分析、响应性检">
+<meta property="og:locale">
+<meta property="og:image" content="https://cpeace-creator.github.io/img/404.jpg">
+<meta property="og:image" content="https://cpeace-creator.github.io/img/404.jpg">
+<meta property="og:image" content="https://cpeace-creator.github.io/img/404.jpg">
+<meta property="og:image" content="https://cpeace-creator.github.io/img/404.jpg">
+<meta property="og:image" content="https://cpeace-creator.github.io/img/404.jpg">
+<meta property="og:image" content="https://cpeace-creator.github.io/img/404.jpg">
+<meta property="og:image" content="https://cpeace-creator.github.io/img/404.jpg">
+<meta property="article:published_time" content="2026-04-02T04:10:00.000Z">
+<meta property="article:modified_time" content="2026-07-15T10:02:22.242Z">
+<meta property="article:author" content="陈嘉鸿">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cpeace-creator.github.io/img/404.jpg">
+
+    <meta name="keywords" content="AI审查, 标书解析, 技术方案生成, RuoYi, Vue3, SpringBoot">
+
+
+<title >AI投标</title>
+
+<!-- Favicon -->
+
+    <link href='/img/favicon.svg?v=2.2.4' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/img/favicon.svg?v=2.2.4' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://npm.elemecdn.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="/css/plugins/font-awesome.min.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"cpeace-creator.github.io","author":"陈嘉鸿","root":"/","typed_text":["Web Developer"],"theme_version":"2.2.4","theme":{"switch":true,"default":"style-dark"},"favicon":{"logo":"https://raw.githubusercontent.com/CPeace-creator/picGo/main/logo.jpg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","apple_touch_icon":null,"webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://npm.elemecdn.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"03/01/2025 17:00:00","prefix":"博客已萌萌哒运行 undefined 天"},"danmu":{"enable":true,"el":".trm-banner","avatar":true,"delayRange":5000,"speed":80}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2026-07-15 18:02:22"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.2.4" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+
+ 
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
+            <!-- top bar -->
+            <header class="trm-top-bar">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" src="https://raw.githubusercontent.com/CPeace-creator/picGo/main/logo.jpg">
+    
+    
+        <div class="trm-logo-text">
+            陈<span>嘉鸿</span>
+        </div>
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/2025/04/19/technology/index/" target="">
+                    技术栈
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/2025/03/05/home/" target="">
+                    关于我
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a data-no-swup href="/" target="">
+                    我的项目
+                </a>
+                
+                <ul>
+                    
+                    <li>
+                        <a  href="/2025/03/16/uniPush/" target="">
+                            UniPush推送
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a  href="/2025/03/23/courseSea/" target="">
+                            课海导航
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a  href="/2025/03/23/EPR/" target="">
+                            卡车物流系统
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a  href="/2026/04/02/ai-bidding-platform/" target="">
+                            AI投标
+                        </a>
+                    </li>
+                    
+                </ul>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
+
+			
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner">
+    
+    <!-- banner cover -->
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="https://raw.githubusercontent.com/CPeace-creator/picGo/main/fj1.jpg">
+    <!-- banner cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-4"></div>
+                
+                <div class="col-lg-8">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text ">
+                        <div class="trm-label trm-mb-20">
+                            NEWS LETTER
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            AI投标
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        2026
+                                    </span>
+                                </li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <span id="scroll-triger" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </span>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+                <div class="trm-page-sidebar col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    <div class="trm-main-card-frame trm-sidebar">
+    <div class="trm-main-card"> 
+        <!-- card header -->
+<div class="trm-mc-header">
+    <div class="trm-avatar-frame trm-mb-20">
+        <img alt="Avatar" class="trm-avatar" src="https://raw.githubusercontent.com/CPeace-creator/picGo/main/logo.jpg">
+    </div>
+    <h5 class="trm-name trm-mb-15">
+        湘江中路
+    </h5>
+    
+        <div class="trm-label">
+            I`m
+            <span class="trm-typed-text">
+                <!-- Words for theme.user.typedText -->
+            </span>
+        </div>
+    
+</div>
+<!-- card header end -->
+        <!-- sidebar social -->
+
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<div class="trm-social">
+    
+        <a href="https://github.com" title="Github" rel="nofollow" target="_blank">
+            <i class="iconfont fab fa-github"></i>
+        </a>
+    
+</div>
+
+<!-- sidebar social end -->
+        <!-- info -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<ul class="trm-table trm-mb-20">
+    
+        <li>
+            <div class="trm-label">
+                目标:
+            </div>
+            <div class="trm-label trm-label-light">
+                独立开发
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                2026年目标:
+            </div>
+            <div class="trm-label trm-label-light">
+                研究副业
+            </div>
+        </li>
+    
+</ul>
+<!-- info end -->
+
+        
+    <div class="trm-divider trm-mb-40 trm-mt-40"></div>
+    <!-- action button -->
+    <div class="text-center">
+        <a href="mailto:chenjiahong@datasega.com" class="trm-btn">
+            联系我
+            <i class="iconfont far fa-envelope"></i>
+        </a>
+    </div>
+    <!-- action button end -->
+
+    </div>
+</div>
+                    <!-- main card end -->
+                </div>
+            
+            <div class="trm-page-content col-lg-8">
+                <div id="trm-content" class="trm-content">
+                    <div class="trm-post-info row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
+            04/02
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-clock trm-icon"></i><br>
+            12:10
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-user trm-icon"></i><br>
+            陈嘉鸿
+        </div>
+    </div>
+</div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <h2 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h2><p>这是一个围绕招投标业务搭建的 AI 辅助平台，核心目标不是做一个普通的管理后台，而是把 <strong>标书上传、读标解析、纪律性审查、响应性检查、模板沉淀、方案生成和在线编辑</strong> 串成一条完整链路，帮助业务人员减少重复性整理和人工比对工作。</p>
+<img src="/img/ai-bidding-platform/doc-review.png" width="75%" alt="AI标书审查模块配图"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'>
+
+<p>整套系统主要服务于以下几个真实业务场景：</p>
+<ul>
+<li>招标文件、投标文件上传后，需要快速完成文本提取、预览和结构化处理。</li>
+<li>面对多家投标单位的技术标，需要做纪律性分析、响应性检查和内容样式校验。</li>
+<li>历史优质方案、目录模板、样式规则需要沉淀到资源库，方便后续复用。</li>
+<li>在新项目开始时，希望根据招标文件内容、方案目录和模板资源快速生成一份技术方案初稿。</li>
+<li>生成后的文档还需要支持在线预览、改写、保存和再次下载，真正进入可交付状态。</li>
+</ul>
+<h2 id="我对这个项目的理解"><a href="#我对这个项目的理解" class="headerlink" title="我对这个项目的理解"></a>我对这个项目的理解</h2><p>如果把这套系统拆开来看，它本质上是一个 <strong>招投标垂直场景的 AI 工作台</strong>，业务上主要分成四个板块：</p>
+<h3 id="1-AI-读标"><a href="#1-AI-读标" class="headerlink" title="1. AI 读标"></a>1. AI 读标</h3><p>对应 <code>AI助手标书</code> 页面,文件解析项目概要和分析解读、会话管理、聊天能力。</p>
+<img src="/img/ai-bidding-platform/read1.png" width="72%" alt="AI读标分析配图"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'>
+<img src="/img/ai-bidding-platform/read2.png" width="72%" alt="AI读标分析配图"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'>
+<img src="/img/ai-bidding-platform/read3.png" width="72%" alt="AI读标分析配图"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'>
+
+<ul>
+<li>支持上传 Word、PDF 等文件进行解析。</li>
+<li>将 OSS 中的文件下载到本地后做文本提取，并入库保存解析结果。</li>
+<li>结合 AI 对话能力支持分项阅读、摘要提取和持续对话。</li>
+<li>会话支持历史记录、重命名、删除和再次查看。</li>
+</ul>
+<p>这一块更像是把“读标”这件事产品化，让原本人工翻文档、手动摘重点的动作变成可追踪的解析流程。</p>
+<h3 id="2-AI-清标-审查"><a href="#2-AI-清标-审查" class="headerlink" title="2. AI 清标 &#x2F; 审查"></a>2. AI 清标 &#x2F; 审查</h3><p>这一块是项目里最明确的业务主线，围绕 <code>投标信息</code>、<code>纪律性分析</code>、<code>响应性检查</code>、<code>内容样式检查</code> 展开。</p>
+<ul>
+<li>维护标段信息和投标单位数据。</li>
+<li>支持批量生成标段关联数据和投标关联数据。</li>
+<li>支持上传投标文件、查询任务状态、分页预览 Word 转 HTML 的内容。</li>
+<li>支持纪律性分析和响应性检查的启动、结果查询、详情查看、异步任务追踪。</li>
+<li>支持样式检查规则、通用规则和自定义规则的维护。</li>
+<li>支持检查后的一键改写、段落更新、结果回写和文档导出。</li>
+</ul>
+<p>这部分不仅有常规 CRUD，还加入了异步任务、防重复发起、并发测试入口、OSS 直传、RabbitMQ、文档转换等能力，说明系统已经开始从“功能可用”向“业务可落地”推进。</p>
+<h3 id="3-模板资源库"><a href="#3-模板资源库" class="headerlink" title="3. 模板资源库"></a>3. 模板资源库</h3><p>这一块由资源模板库、方案类型、目录模板、文档模板共同组成，是整个系统后续复用能力的基础。</p>
+<img src="/img/ai-bidding-platform/template1.png" width="68%" alt="模板资源库配图"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'>
+<img src="/img/ai-bidding-platform/template2.png" width="68%" alt="模板资源库配图"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'>
+
+<ul>
+<li>可维护方案类型。</li>
+<li>可维护模板分类。</li>
+<li>可上传和管理资源库文档。</li>
+<li>模板文档除了文件本身，还支持保存结构化的模板内容。</li>
+<li>目录模板和普通模板是分开的，生成方案时会有筛选逻辑。</li>
+</ul>
+<p>我比较看重这一块，因为它决定了系统是不是一次性工具。只有把目录、模板、样式规则和方案类型沉淀下来，后续 AI 生成才会越来越像“企业自己的能力”，而不是每次重新从零开始。</p>
+<h3 id="4-智能方案编制"><a href="#4-智能方案编制" class="headerlink" title="4. 智能方案编制"></a>4. 智能方案编制</h3><p>这是我认为最有价值的一块，也是整个项目把业务价值真正闭环的地方。</p>
+<img src="/img/ai-bidding-platform/preparation.png" width="76%" alt="智能方案编制配图"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'>
+
+<ul>
+<li>支持创建技术标方案，并绑定项目名称、方案名称、专业类型、原始招标文件等信息。</li>
+<li>支持选择目录模板，并在前端对目录树做编辑、增删和保存。</li>
+<li>支持设置样式规则，让生成结果尽量符合交付规范。</li>
+<li>后端会先提取招标文件概况，再结合目录树和资源模板，筛选最匹配的模板文档。</li>
+<li>通过 LLM 生成文档内容草稿，并记录生成进度。</li>
+<li>生成后支持预览、下载、编辑后保存、再次下载。</li>
+<li>对具体内容还提供 AI 改写能力，方便补充和润色。</li>
+</ul>
+<p>这说明项目不只是“检查文档有没有问题”，而是进一步往“自动辅助生产文档”走了一步。</p>
+<h2 id="我从代码里总结出的业务需求"><a href="#我从代码里总结出的业务需求" class="headerlink" title="我从代码里总结出的业务需求"></a>我从代码里总结出的业务需求</h2><p>结合前后端实现，我认为这个项目的业务需求大致可以总结成下面几类。</p>
+<h3 id="文档处理需求"><a href="#文档处理需求" class="headerlink" title="文档处理需求"></a>文档处理需求</h3><ul>
+<li>需要统一管理招标文件、投标文件和生成文档。</li>
+<li>需要支持 Word、PDF 等文件的上传、存储、解析和预览。</li>
+<li>需要把非结构化文档内容转换成可检索、可分析、可再次利用的数据。</li>
+</ul>
+<h3 id="审查提效需求"><a href="#审查提效需求" class="headerlink" title="审查提效需求"></a>审查提效需求</h3><ul>
+<li>需要减少多家投标文件横向比对的人工成本。</li>
+<li>需要用规则和 AI 结合的方式做纪律性分析、响应性检查和样式校验。</li>
+<li>需要将检查结果结构化展示，并能定位到具体问题内容。</li>
+<li>需要对审查任务进行异步化处理，避免长时间阻塞页面操作。</li>
+</ul>
+<h3 id="知识沉淀需求"><a href="#知识沉淀需求" class="headerlink" title="知识沉淀需求"></a>知识沉淀需求</h3><ul>
+<li>需要把历史优质方案和目录标准化沉淀到模板库。</li>
+<li>需要让不同专业类型对应不同的目录模板和方案模板。</li>
+<li>需要支持规则库和模板库的持续维护，而不是写死在代码里。</li>
+</ul>
+<h3 id="内容生成需求"><a href="#内容生成需求" class="headerlink" title="内容生成需求"></a>内容生成需求</h3><ul>
+<li>需要基于招标文件、模板库和目录结构，自动生成技术方案初稿。</li>
+<li>需要支持生成过程中的进度查询、失败重试和在线预览。</li>
+<li>需要在生成后继续人工编辑，并把 AI 改写融入具体段落优化流程。</li>
+</ul>
+<h2 id="这个项目里做了哪些内容"><a href="#这个项目里做了哪些内容" class="headerlink" title="这个项目里做了哪些内容"></a>这个项目里做了哪些内容</h2><p>如果从“做了什么”来总结，我会把它概括成下面几部分。</p>
+<h3 id="后端侧"><a href="#后端侧" class="headerlink" title="后端侧"></a>后端侧</h3><ul>
+<li>基于 RuoYi-Vue-Plus 做了多模块扩展，包含审查模块、聊天模型模块、文件解析模块、模板资源模块。</li>
+<li>设计了投标信息、方案、规则、结果、任务、模板、目录等核心数据模型。</li>
+<li>实现了文件上传、OSS 直传、文档下载、Word 转 HTML 预览等基础能力。</li>
+<li>落地了纪律性分析、响应性检查、内容样式校验等核心接口。</li>
+<li>接入 LLM 能力，用于方案生成、文本改写和 AI 聊天。</li>
+<li>实现了文档生成任务、进度跟踪、保存编辑结果和重新导出等流程。</li>
+<li>补充了异步任务、并发控制、任务状态查询等工程化处理。</li>
+</ul>
+<h3 id="前端侧"><a href="#前端侧" class="headerlink" title="前端侧"></a>前端侧</h3><ul>
+<li>基于 Vue 3 + TypeScript + Vite + Naive UI 搭建了现代化后台界面。</li>
+<li>实现了 AI 清标列表、审查详情、规则配置、结果查看等页面。</li>
+<li>实现了 AI 读标页面，支持文件导入、解析结果查看、历史记录维护。</li>
+<li>实现了模板资源库页面，支持分类、模板列表、模板详情维护。</li>
+<li>实现了智能方案编制页面，支持方案列表、创建方案、目录树配置、查看和编辑。</li>
+<li>通过接口层对接后端的解析、审查、模板、方案生成、聊天等能力。</li>
+</ul>
+<h3 id="业务价值侧"><a href="#业务价值侧" class="headerlink" title="业务价值侧"></a>业务价值侧</h3><ul>
+<li>把“读标、审标、写方案”从割裂的线下动作，串成了统一工作流。</li>
+<li>把经验型的目录模板和方案模板沉淀成了系统资产。</li>
+<li>把 AI 能力真正嵌入业务动作，而不是单独放一个聊天窗口。</li>
+<li>让系统从单纯的管理后台，变成了能辅助业务产出的生产工具。</li>
+</ul>
+<h2 id="技术栈总结"><a href="#技术栈总结" class="headerlink" title="技术栈总结"></a>技术栈总结</h2><h3 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h3><ul>
+<li>Vue 3</li>
+<li>TypeScript</li>
+<li>Vite</li>
+<li>Naive UI</li>
+<li>Pinia</li>
+<li>Vue Router</li>
+</ul>
+<h3 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h3><ul>
+<li>Spring Boot</li>
+<li>Spring Security</li>
+<li>Sa-Token</li>
+<li>MyBatis-Plus</li>
+<li>RuoYi-Vue-Plus</li>
+<li>RabbitMQ</li>
+<li>OSS 文件存储</li>
+</ul>
+<h3 id="AI-与文档处理"><a href="#AI-与文档处理" class="headerlink" title="AI 与文档处理"></a>AI 与文档处理</h3><ul>
+<li>LLM 对话与文本改写</li>
+<li>文档解析与文件入库</li>
+<li>Word 转 HTML 预览</li>
+<li>基于模板和目录的方案生成</li>
+</ul>
+<h2 id="项目难点"><a href="#项目难点" class="headerlink" title="项目难点"></a>项目难点</h2><p>这类项目最难的地方，其实不是单独某个接口，而是把多个环节串起来后仍然保证体验可用。</p>
+<ul>
+<li>文档本身是非结构化的，先天就难处理。</li>
+<li>招投标业务对结果准确性、格式规范性要求很高。</li>
+<li>AI 能力适合做生成和辅助判断，但不能完全替代业务规则。</li>
+<li>文件解析、异步任务、结果回写、在线编辑、文档再导出，链路很长，任意一环出问题都会影响实际使用。</li>
+</ul>
+<p>所以这个项目真正有价值的地方，在于它不是简单“接个 AI 接口”，而是在业务、数据、任务流和文档流之间做了比较完整的系统化串联。</p>
+<h2 id="项目收获"><a href="#项目收获" class="headerlink" title="项目收获"></a>项目收获</h2><p>通过这类项目，我会更明确地感受到：</p>
+<ul>
+<li>AI 在企业系统中的价值，不只是对话，而是嵌入具体业务节点。</li>
+<li>模板、规则、目录、历史方案这些“知识资产”决定了系统后期效果上限。</li>
+<li>复杂文档业务一定要把上传、解析、预览、结果定位、导出做成完整闭环。</li>
+<li>做后台项目时，真正的壁垒往往不是界面，而是业务流程抽象和工程落地能力。</li>
+</ul>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>这个项目给我的最大感受，是它同时覆盖了 <strong>AI辅助阅读、文档智能审查、知识资产沉淀、方案自动生成</strong> 四个方向。相比单点能力，它更像一个面向招投标场景的业务中台雏形。</p>
+<p>如果后面继续往下做，我觉得还有几个非常自然的演进方向：</p>
+<ul>
+<li>提高规则引擎与 AI 结果的协同能力，降低误报和漏报。</li>
+<li>强化模板推荐和目录匹配，让方案生成结果更稳定。</li>
+<li>做多人协同编辑和版本管理，进一步接近真实交付流程。</li>
+<li>建立项目级知识库，让历史项目经验可以被持续复用。</li>
+</ul>
+<p>对我来说，这类项目最有意思的地方，就是它不再只是“写管理系统”，而是在尝试把具体行业里的复杂工作流做成真正可复用的软件能力。</p>
+
+</article>
+    
+    
+
+</div>
+<div class="trm-post-next-prev row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            其他文章
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2025/04/19/technology/index/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="https://www.logosc.cn/uploads/resources/2018/11/29/1543459457_thumb.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" #.">
+                    未分类
+                </a>
+            </div>
+            <h5>
+                <a href="/2025/04/19/technology/index/" class="trm-anima-link">
+                    我的技术栈
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>25/04/19</li>
+                <li>21:36</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+    
+
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <footer class="trm-footer-card trm-scroll-animation">
+
+    
+        <div class="trm-footer-item">
+            <a rel="noopener" href="https://beian.miit.gov.cn/" target="_blank"></a>
+        </div>
+    
+
+    
+
+      
+
+    
+        <div class="trm-footer-item blog-run-long"></div>
+     
+
+    
+        <div class="trm-footer-item">
+            制作不易,请留个言再离开吧～
+        </div>
+     
+</footer>
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+
+            
+
+            
+<div class="trm-fixed-container">
+    
+    
+        <div class="trm-fixed-btn" data-title="阅读模式" onclick="asyncFun.switchReadMode()">
+            <i class="iconfont fas fa-book-reader"></i>
+        </div>
+    
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部">
+        <i class="iconfont fas fa-arrow-up"></i>
+    </div>
+</div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+  </div>
+  <!-- app wrapper end -->
+
+  
+  <!-- Plugin -->
+
+
+
+
+    
+    
+<script src="https://npm.elemecdn.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+        <script src="/js/plugins/typing.js?v=2.2.4"></script>
+    
+
+    
+
+    <!-- 数学公式 -->
+    
+
+    <!-- 评论插件 -->
+    
+        
+
+        
+    
+
+		
+			<script src="/js/plugins/danmu.js?v=2.2.4"></script>
+		
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+
+
+<script id="async-script" src="/js/main.js?v=2.2.4"></script>
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
+
+</body>
+
+</html>
